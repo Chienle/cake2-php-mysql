@@ -21,6 +21,7 @@ RUN apt-get update \
     && docker-php-ext-install -j$(nproc) gd \
     && pecl install imagick \
     && docker-php-ext-enable imagick \
+    && docker-php-ext-install calendar \
     && rm -rf /var/lib/apt/lists/*
 
 RUN a2enmod rewrite
